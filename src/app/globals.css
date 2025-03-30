@@ -7,6 +7,12 @@
   }
 } */
 
+@theme {
+  --color-headerYellow: #F4F7C8;
+  --color-divBorderGreen: #E6DC17;
+  --color-divBorderPurple: #3141CA;
+}
+
 body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
@@ -17,3 +23,7 @@ body {
   object-fit: cover;
   z-index: -1;
 }
+
+/* .header-color-normal{
+  color: #F4F7C8;
+} */
