@@ -1,30 +1,66 @@
 "use client";
 
-export default function AboutMe(){
+export default function AboutMe()
+{
     return (
-        <div className="gap-y-[5em] grid grid-row-2">
-            <div className="row-start-1 relative grid grid-cols-3 my-5">
-                <div className="col-start-1 grid grid-cols-3 py-2">
-                    <div className="absolute t-0 -left-2 md:w-38 col-start-1 col-span-1 bg-divBorderPurple rounded-r-full py-2">
-                        <h1 className="text-center text-xl text-headerYellow">
-                            About Me
-                        </h1>
-                    </div>
-                    <div className="absolute t-0 left-32 col-start-1 md:w-100 col-span-2 bg-divBorderGreen rounded-r-full p-2 -z-1">
-                        <h1 className="text-center text-xl text-black">
-                            A short introduction from the one and only!
-                        </h1>
-                    </div>
+        <div className="relative mt-10">
+            <div className="hidden md:flex">
+                <div className="flex justify-center items-center py-1 px-10 z-10 bg-divBorderPurple rounded-r-full">
+                    <img
+                        src="/header/symbol.png"
+                        alt="Illustrative Example"
+                        className="scale-75 mr-1"
+                    />
+                    <h1 className="text-center text-s text-[#ffffb4]">
+                        About Me
+                    </h1>
+                </div>
+
+                <div className="py-1 px-15 -ml-5 z-0 bg-divBorderGreen rounded-r-full">
+                    <h1 className="text-center text-s text-black">
+                        A short introduction from the one and only!
+                    </h1>
                 </div>
             </div>
 
-            <div className="row-start-2 grid grid-cols-2 mx-[2em]">
-                <div className="relative col-start-1 mx-[6em] mt-[5em]">
-                    <img src="/about_me/animated_header.png" width="496px" alt="Illustrative Example" className=""/>
-                    <img src="/about_me/about_me_body.png" width="453px" alt="Illustrative Example" className="absolute top-16 left-9 -z-1" />
+            <div className="relative md:hidden items-center justify-center">
+                <div className="text-center justify-center flex py-1 px-10 mt-5 bg-divBorderPurple rounded-full mx-auto w-2/5">
+                    <img
+                        src="/header/symbol.png"
+                        alt="Illustrative Example"
+                        className="scale-50 mr-1"
+                    />
+                    <h1 className="text-center text-s text-[#ffffb4]">
+                        About Me
+                    </h1>
                 </div>
-                <div className="col-start-2">
-                    <img src="/about_me/illustration_about_me.png" width={1000} height={1000} alt="Illustrative Example"/>
+
+                <div className="py-1 px-10 mt-5 bg-divBorderGreen rounded-full mx-auto w-4/5">
+                    <h1 className="text-center text-s text-black">
+                        A short introduction from the one and only!
+                    </h1>
+                </div>
+            </div>
+
+            <div className="flex flex-col sm:flex-row sm:space-x-4">
+                {/* Left Block: Occupying 40% width on larger screens */}
+                <div className="w-full sm:w-[40%] flex items-center justify-center">
+                    <div className="text-center">
+                        <img
+                            src="/about_me/about_me_text.png"
+                            alt="Illustrative Example"
+                            className="relative scale-90 w-full sm:w-auto"
+                        />
+                    </div>
+                </div>
+
+                {/* Right Block: Occupying 60% width on larger screens */}
+                <div className="w-full sm:w-[60%] flex items-center justify-center mt-4 sm:mt-0">
+                    <img
+                        src="/about_me/illustration_about_me.png"
+                        alt="Illustrative Example"
+                        className="w-full sm:w-auto"
+                    />
                 </div>
             </div>
         </div>

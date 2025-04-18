@@ -1,20 +1,28 @@
 "use client";
 
-export default function DivBorder(){
+export default function DivBorder()
+{
     return (
-        <div className="relative grid grid-cols-3 my-5">
-            <div className="col-start-1 grid grid-cols-3 py-2">
-                <div className="absolute t-0 -left-2 w-38 col-start-1 col-span-1 bg-divBorderPurple rounded-r-full py-2">
-                    <h1 className="text-center text-xl text-headerYellow">
-                        About Me
-                    </h1>
+        <div className="relative my-5 px-4">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                {/* Purple block */}
+                <div className="relative sm:col-span-1">
+                    <div className="bg-divBorderPurple rounded-r-full py-2 px-4 w-full sm:max-w-xs">
+                        <h1 className="text-center text-xl text-headerYellow">
+                            About Me
+                        </h1>
+                    </div>
                 </div>
-                <div className="absolute t-0 left-32 col-start-1 w-100 col-span-2 bg-divBorderGreen rounded-r-full p-2 -z-1">
-                    <h1 className="text-center text-xl text-black">
-                        A short introduction from the one and only!
-                    </h1>
+
+                {/* Green block */}
+                <div className="relative sm:col-span-2">
+                    <div className="bg-divBorderGreen rounded-r-full py-2 px-4 w-full sm:max-w-2xl">
+                        <h1 className="text-center text-xl text-black">
+                            A short introduction from the one and only!
+                        </h1>
+                    </div>
                 </div>
             </div>
         </div>
-    )
+    );
 }

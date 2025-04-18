@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-const bentonSans = localFont({ src: '../../public/font/BentonSans/bentonsans-regular.otf'})
+const bentonSans = localFont({ src: '../../public/font/BentonSans/bentonsans-regular.otf' })
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -25,9 +25,15 @@ export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
-}>) {
+}>)
+{
   return (
     <html lang="en">
+      <head>
+        {/* Add the viewport meta tag */}
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        {/* You can add other meta tags or links here as well */}
+      </head>
       <body className={`${bentonSans.className} antialiased`}>
         {children}
       </body>
