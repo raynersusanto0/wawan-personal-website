@@ -11,13 +11,13 @@ export default function AboutMe()
                         alt="Illustrative Example"
                         className="scale-75 mr-1"
                     />
-                    <h1 className="text-center text-s text-[#ffffb4]">
+                    <h1 className="text-center text-sm text-[#ffffb4]">
                         About Me
                     </h1>
                 </div>
 
                 <div className="py-1 px-15 -ml-5 z-0 bg-divBorderGreen rounded-r-full">
-                    <h1 className="text-center text-s text-black">
+                    <h1 className="text-center text-sm text-black">
                         A short introduction from the one and only!
                     </h1>
                 </div>
@@ -30,7 +30,7 @@ export default function AboutMe()
                         alt="Illustrative Example"
                         className="scale-50 mr-1"
                     />
-                    <h1 className="text-center text-s text-[#ffffb4]">
+                    <h1 className="text-center text-sm text-[#ffffb4]">
                         About Me
                     </h1>
                 </div>

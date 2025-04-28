@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Header from "@/components/Header";
 import AboutMe from "@/components/about_me/AboutMe";
+import CharacterInfo from "@/components/character_info/CharacterInfo";
 
 export default function Home()
 {
@@ -22,6 +23,7 @@ export default function Home()
       <div className="relative z-10">
         <Header />
         <AboutMe />
+        <CharacterInfo />
       </div>
     </div>
   );

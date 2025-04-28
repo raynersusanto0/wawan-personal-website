@@ -1,6 +1,12 @@
 "use client";
 
-export default function DivBorder()
+import { DivBorderData } from "@/utils/DivBorderData";
+
+interface InputProps{
+    divBorderData: DivBorderData
+}
+
+export default function DivBorder({ divBorderData }: InputProps)
 {
     return (
         <div className="relative my-5 px-4">
@@ -10,6 +16,7 @@ export default function DivBorder()
                     <div className="bg-divBorderPurple rounded-r-full py-2 px-4 w-full sm:max-w-xs">
                         <h1 className="text-center text-xl text-headerYellow">
                             About Me
+                            { divBorderData.purpleText }
                         </h1>
                     </div>
                 </div>
@@ -19,6 +26,7 @@ export default function DivBorder()
                     <div className="bg-divBorderGreen rounded-r-full py-2 px-4 w-full sm:max-w-2xl">
                         <h1 className="text-center text-xl text-black">
                             A short introduction from the one and only!
+                            { divBorderData.greenText }
                         </h1>
                     </div>
                 </div>
