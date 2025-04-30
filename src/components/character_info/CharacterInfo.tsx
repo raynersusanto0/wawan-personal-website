@@ -96,10 +96,13 @@ export default function CharacterInfo() {
                         {
                             isHovering ? 
                             (
-                                <input type="image" src="character_info/famera/Famera_Hover.png" alt="" style={{ width: "40vw" }} onMouseLeave={() => setIsHovered(false)} />
+                                <input type="image" src="character_info/famera/Famera_Hover.png" alt="" style={{ width: "40vw" }} onMouseLeave={() => setIsHovered(false)} onClick={() => {setClicked(true); setIsHovered(false) }}/>
+                            ) : clicked ?
+                            (
+                                <input type="image" src="character_info/famera/Famera_Clicked.png" alt="" style={{ width: "40vw" }} onMouseLeave={() => {setClicked(false); setIsHovered(false)}} />
                             ) :
                             (
-                                <input type="image" src="character_info/famera/Famera_Idle.png" alt="" style={{ width: "40vw" }} onMouseOver={() => setIsHovered(true)} />
+                                <input type="image" src="character_info/famera/Famera_Idle.png" alt="" style={{ width: "40vw" }} onMouseOver={() => setIsHovered(true)} onClick={() => setClicked(true)} />
                             )
                         }
                     </div>
