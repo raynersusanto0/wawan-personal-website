@@ -2,7 +2,7 @@
 
 import { useKeenSlider } from "keen-slider/react"
 import "keen-slider/keen-slider.min.css"
-import { useState } from "react"
+import { useState, useEffect, useRef } from "react"
 
 export default function CharacterInfo() {
     const [currentSlide, setCurrentSlide] = useState(0);
@@ -18,12 +18,25 @@ export default function CharacterInfo() {
     });
 
     const [isHovering, setIsHovered] = useState(false);
-    const [clicked, setClicked] = useState(false);
     const [isHovering2, setIsHovered2] = useState(false);
     const [isHovering3, setIsHovered3] = useState(false);
     const [isHovering4, setIsHovered4] = useState(false);
     const [isHovering5, setIsHovered5] = useState(false);
     const [isHovering6, setIsHovered6] = useState(false);
+
+    const [arrayClicked, setArrayClicked] = useState([false, false, false, false, false, false]);
+
+    const toggleBooleanArray = (index: number, val: boolean) => {
+        const newArrayClicked = [...arrayClicked];
+
+        if(val === true){
+            newArrayClicked.fill(false);
+        }
+
+        newArrayClicked[index] = val;
+        setArrayClicked(newArrayClicked);
+    }
+
     return (
         <div className="relative mt-10">
             {/* Mobile Version */}
@@ -96,13 +109,13 @@ export default function CharacterInfo() {
                         {
                             isHovering ? 
                             (
-                                <input type="image" src="character_info/famera/Famera_Hover.png" alt="" style={{ width: "40vw" }} onMouseLeave={() => setIsHovered(false)} onClick={() => {setClicked(true); setIsHovered(false) }}/>
-                            ) : clicked ?
+                                <input type="image" src="character_info/famera/Famera_Hover.png" alt="" style={{ width: "40vw" }} onMouseLeave={() => setIsHovered(false)} onClick={() => {toggleBooleanArray(0, true); setIsHovered(false) }}/>
+                            ) : arrayClicked[0] ?
                             (
-                                <input type="image" src="character_info/famera/Famera_Clicked.png" alt="" style={{ width: "40vw" }} onMouseLeave={() => {setClicked(false); setIsHovered(false)}} />
+                                <input type="image" src="character_info/famera/Famera_Clicked.png" alt="" style={{ width: "40vw" }} onMouseLeave={() => {setIsHovered(false)}} onClick={() => {toggleBooleanArray(0, !arrayClicked[0]); setIsHovered(true)}} />
                             ) :
                             (
-                                <input type="image" src="character_info/famera/Famera_Idle.png" alt="" style={{ width: "40vw" }} onMouseOver={() => setIsHovered(true)} onClick={() => setClicked(true)} />
+                                <input type="image" src="character_info/famera/Famera_Idle.png" alt="" style={{ width: "40vw" }} onMouseOver={() => setIsHovered(true)} onClick={() => toggleBooleanArray(0, true)} />
                             )
                         }
                     </div>
@@ -110,10 +123,13 @@ export default function CharacterInfo() {
                     {
                             isHovering2 ? 
                             (
-                                <input type="image" src="character_info/olj/OLJ_Hover.png" alt="" style={{ width: "40vw" }} onMouseLeave={() => setIsHovered2(false)} />
+                                <input type="image" src="character_info/olj/OLJ_Hover.png" alt="" style={{ width: "40vw" }} onMouseLeave={() => setIsHovered2(false)} onClick={() => {toggleBooleanArray(1, true); setIsHovered2(false) }} />
+                            ) : arrayClicked[1] ?
+                            (
+                                <input type="image" src="character_info/olj/OLJ_Clicked.png" alt="" style={{ width: "40vw" }} onMouseOver={() => setIsHovered2(false)} onClick={() => {toggleBooleanArray(1, !arrayClicked[1]); setIsHovered2(true)}} />
                             ) :
                             (
-                                <input type="image" src="character_info/olj/OLJ_Idle.png" alt="" style={{ width: "40vw" }} onMouseOver={() => setIsHovered2(true)} />
+                                <input type="image" src="character_info/olj/OLJ_Idle.png" alt="" style={{ width: "40vw" }} onMouseOver={() => setIsHovered2(true)} onClick={() => toggleBooleanArray(1, true)} />
                             )
                     }
                     </div>
@@ -121,10 +137,13 @@ export default function CharacterInfo() {
                     {
                             isHovering3 ? 
                             (
-                                <input type="image" src="character_info/settle_down/settle_down_Hover.png" alt="" style={{ width: "40vw" }} onMouseLeave={() => setIsHovered3(false)} />
+                                <input type="image" src="character_info/settle_down/settle_down_Hover.png" alt="" style={{ width: "40vw" }} onMouseLeave={() => setIsHovered3(false)} onClick={() => {toggleBooleanArray(2, true); setIsHovered3(false)}} />
+                            ) : arrayClicked[2] ?
+                            (
+                                <input type="image" src="character_info/settle_down/settle_down_Clicked.png" alt="" style={{ width: "40vw" }} onMouseOver={() => setIsHovered3(false)} onClick={() => {toggleBooleanArray(2, !arrayClicked[2]); setIsHovered3(true)}} />
                             ) :
                             (
-                                <input type="image" src="character_info/settle_down/settle_down_Idle.png" alt="" style={{ width: "40vw" }} onMouseOver={() => setIsHovered3(true)} />
+                                <input type="image" src="character_info/settle_down/settle_down_Idle.png" alt="" style={{ width: "40vw" }} onMouseOver={() => setIsHovered3(true)} onClick={() => toggleBooleanArray(2, true)} />
                             )
                     }
                     </div>
@@ -132,10 +151,13 @@ export default function CharacterInfo() {
                     {
                             isHovering4 ? 
                             (
-                                <input type="image" src="character_info/voluspa/voluspa_Hover.png" alt="" style={{ width: "40vw" }} onMouseLeave={() => setIsHovered4(false)} />
+                                <input type="image" src="character_info/voluspa/voluspa_Hover.png" alt="" style={{ width: "40vw" }} onMouseLeave={() => setIsHovered4(false)}  onClick={() => {toggleBooleanArray(3, true); setIsHovered4(false)}} />
+                            ) : arrayClicked[3] ?
+                            (
+                                <input type="image" src="character_info/voluspa/voluspa_Clicked.png" alt="" style={{ width: "40vw" }} onMouseOver={() => setIsHovered4(false)} onClick={() => {toggleBooleanArray(3, !arrayClicked[3]); setIsHovered4(true)}} />
                             ) :
                             (
-                                <input type="image" src="character_info/voluspa/voluspa_Idle.png" alt="" style={{ width: "40vw" }} onMouseOver={() => setIsHovered4(true)} />
+                                <input type="image" src="character_info/voluspa/voluspa_Idle.png" alt="" style={{ width: "40vw" }} onMouseOver={() => setIsHovered4(true)} onClick={() => toggleBooleanArray(3, true)}/>
                             )
                     }
                     </div>
@@ -143,10 +165,13 @@ export default function CharacterInfo() {
                     {
                             isHovering5 ? 
                             (
-                                <input type="image" src="character_info/goose_club/goose_club_Hover.png" alt="" style={{ width: "40vw" }} onMouseLeave={() => setIsHovered5(false)} />
+                                <input type="image" src="character_info/goose_club/goose_club_Hover.png" alt="" style={{ width: "40vw" }} onMouseLeave={() => setIsHovered5(false)} onClick={() => {toggleBooleanArray(4, true); setIsHovered5(false)}}/>
+                            ) : arrayClicked[4] ?
+                            (
+                                <input type="image" src="character_info/goose_club/goose_club_Clicked.png" alt="" style={{ width: "40vw" }} onMouseOver={() => setIsHovered5(false)} onClick={() => {toggleBooleanArray(4, !arrayClicked[4]); setIsHovered5(true)}} />
                             ) :
                             (
-                                <input type="image" src="character_info/goose_club/goose_club_Idle.png" alt="" style={{ width: "40vw" }} onMouseOver={() => setIsHovered5(true)} />
+                                <input type="image" src="character_info/goose_club/goose_club_Idle.png" alt="" style={{ width: "40vw" }} onMouseOver={() => setIsHovered5(true)} onClick={() => toggleBooleanArray(4, true)}/>
                             )
                     }
                     </div>
@@ -154,10 +179,13 @@ export default function CharacterInfo() {
                     {
                             isHovering6 ? 
                             (
-                                <input type="image" src="character_info/personal_project/personal_project_Hover.png" alt="" style={{ width: "40vw" }} onMouseLeave={() => setIsHovered6(false)} />
+                                <input type="image" src="character_info/personal_project/personal_project_Hover.png" alt="" style={{ width: "40vw" }} onMouseLeave={() => setIsHovered6(false)} onClick={() => {toggleBooleanArray(5, true); setIsHovered6(false)}}/>
+                            ) : arrayClicked[5] ?
+                            (
+                                <input type="image" src="character_info/personal_project/personal_project_Clicked.png" alt="" style={{ width: "40vw" }} onMouseOver={() => setIsHovered6(false)} onClick={() => {toggleBooleanArray(5, !arrayClicked[5]); setIsHovered6(true)}} />
                             ) :
                             (
-                                <input type="image" src="character_info/personal_project/personal_project_Idle.png" alt="" style={{ width: "40vw" }} onMouseOver={() => setIsHovered6(true)} />
+                                <input type="image" src="character_info/personal_project/personal_project_Idle.png" alt="" style={{ width: "40vw" }} onMouseOver={() => setIsHovered6(true)} onClick={() => toggleBooleanArray(5, true)}/>
                             )
                     }
                     </div>
