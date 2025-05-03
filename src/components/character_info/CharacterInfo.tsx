@@ -15,6 +15,7 @@ export default function CharacterInfo() {
       created() {
         setLoaded(true)
       },
+      loop: true,
     });
 
     const [isHovering, setIsHovered] = useState(false);
@@ -61,7 +62,7 @@ export default function CharacterInfo() {
             </div>
 
             <div className="flex flex-col md:hidden sm:space-x-4">
-                <div ref={sliderRef} className="keen-slider text-lg text-white" style={{ height: 200 }}>
+                <div ref={sliderRef} className="keen-slider text-lg text-white mt-5" style={{ height: 100 }}>
                     <div className="keen-slider__slide flex items-center justify-center">
                         <img src="character_info/famera/Famera_Idle.png" alt="" style={{ width: "80vw" }}/>
                     </div>
@@ -81,6 +82,23 @@ export default function CharacterInfo() {
                         <img src="character_info/personal_project/personal_project_idle.png" alt="" style={{ width: "80vw"}} />
                     </div>
                 </div>
+                {loaded && instanceRef.current && (
+                    <div className="dots">
+                        {[
+                            ...Array(instanceRef.current.track.details.slides.length).keys(),
+                        ].map((idx) => {
+                            return (
+                                <button
+                                    key={idx}
+                                    onClick={() => {
+                                        instanceRef.current?.moveToIdx(idx)
+                                    }}
+                                    className={"dot" + (currentSlide === idx ? " active" : "")}
+                                ></button>
+                            )
+                        })}
+                    </div>
+                )}
             </div>
 
             {/* Desktop Version */}
