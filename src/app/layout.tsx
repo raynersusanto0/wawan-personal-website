@@ -35,7 +35,7 @@ export default function RootLayout({
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         {/* You can add other meta tags or links here as well */}
       </head>
-      <body className={`${bentonSans.className} antialiased`}>
+      <body className={`${bentonSans.className} antialiased overflow-x-hidden`}>
         {children}
       </body>
     </html>

@@ -64,22 +64,22 @@ export default function CharacterInfo() {
             <div className="flex flex-col md:hidden sm:space-x-4">
                 <div ref={sliderRef} className="keen-slider text-lg text-white mt-5" style={{ height: 100 }}>
                     <div className="keen-slider__slide flex items-center justify-center">
-                        <img src="character_info/famera/Famera_Idle.png" alt="" style={{ width: "80vw" }}/>
+                        <img src="character_info/famera/Famera_Idle.png" alt="" style={{ width: "w-full" }}/>
                     </div>
                     <div className="keen-slider__slide flex items-center justify-center">
-                        <img src="character_info/olj/OLJ_Idle.png" alt="" style={{ width: "80vw"}} />
+                        <img src="character_info/olj/OLJ_Idle.png" alt="" style={{ width: "w-full"}} />
                     </div>
                     <div className="keen-slider__slide flex items-center justify-center">
-                        <img src="character_info/settle_down/settle_down_idle.png" alt="" style={{ width: "80vw"}} />
+                        <img src="character_info/settle_down/settle_down_idle.png" alt="" style={{ width: "w-full"}} />
                     </div>
                     <div className="keen-slider__slide flex items-center justify-center">
-                        <img src="character_info/voluspa/voluspa_idle.png" alt="" style={{ width: "80vw"}} />
+                        <img src="character_info/voluspa/voluspa_idle.png" alt="" style={{ width: "w-full"}} />
                     </div>
                     <div className="keen-slider__slide flex items-center justify-center">
-                        <img src="character_info/goose_club/goose_club_idle.png" alt="" style={{ width: "80vw"}} />
+                        <img src="character_info/goose_club/goose_club_idle.png" alt="" style={{ width: "w-full"}} />
                     </div>
                     <div className="keen-slider__slide flex items-center justify-center">
-                        <img src="character_info/personal_project/personal_project_idle.png" alt="" style={{ width: "80vw"}} />
+                        <img src="character_info/personal_project/personal_project_idle.png" alt="" style={{ width: "w-full"}} />
                     </div>
                 </div>
                 {loaded && instanceRef.current && (

@@ -2,6 +2,8 @@ import Image from "next/image";
 import Header from "@/components/Header";
 import AboutMe from "@/components/about_me/AboutMe";
 import CharacterInfo from "@/components/character_info/CharacterInfo";
+import Portfolio from "@/components/portfolio/Portfolio";
+import Footer from "@/components/footer/footer";
 
 export default function Home()
 {
@@ -24,6 +26,7 @@ export default function Home()
         <Header />
         <AboutMe />
         <CharacterInfo />
+        <Footer />
       </div>
     </div>
   );
